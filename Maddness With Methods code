@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+public class MaddnessWithMethods {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int[] numbers = getTwoIntsFromUser(scanner);
+
+        String comparisonResult = compareTwoInts(numbers[0], numbers[1]);
+        System.out.println(comparisonResult);
+
+        int sum = sumTwoInts(numbers[0], numbers[1]);
+        System.out.println("The sum of the two integers is: " + sum);
+
+        scanner.close();
+    }
+
+    public static int[] getTwoIntsFromUser(Scanner scanner) {
+        System.out.print("Enter the first number: ");
+        int first = scanner.nextInt();
+        System.out.print("Enter the second number: ");
+        int second = scanner.nextInt();
+        return new int[]{first, second};
+    }
+
+    public static String compareTwoInts(int a, int b) {
+        if (a > b) {
+            return a + " is greater than " + b;
+        } else if (a < b) {
+            return a + " is smaller than " + b;
+        } else {
+            return a + " is equal to " + b;
+        }
+    }
+
+    public static int sumTwoInts(int a, int b) {
+        return a + b;
+    }
+}
